@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners
+        android:radius="30dp"
+        />
+    <solid
+        android:color="#add8e6"
+        />
+    <!-- use example in xml: android:background="@drawable/round_and_lightblue"
+      use example in java: view.setBackground(getContext().getResources().getDrawable(R.drawable.round_and_white)); -->
+</shape>

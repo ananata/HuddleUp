@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menuButton">
+
+    // example for adding an icon
+    // android:icon="@drawable/ic_settings_black_24dp"
+
+    <item
+        android:id="@+id/navHome"
+        android:title="Home"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/navSettings"
+        android:title="Settings"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/navCalendar"
+        android:title="Calendar"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/navSearch"
+        android:title="Search"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/navUser"
+        android:title="User"
+        app:showAsAction="never">
+
+        // a sub menu
+        <menu>
+            <item
+                android:id="@+id/navMyProfile"
+                android:title="My Profile" />
+            <item
+                android:id="@+id/navProfileIcon"
+                android:title="ProfileIcon" />
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/navTeam"
+        android:title="Team"
+        app:showAsAction="never">
+
+        // a sub menu
+        <menu>
+            <item
+                android:id="@+id/navTeamSelect"
+                android:title="Select Team" />
+            <item
+                android:id="@+id/navTeamCreate"
+                android:title="Create Team" />
+        </menu>
+
+    </item>
+
+</menu>

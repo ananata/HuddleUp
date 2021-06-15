@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Account Settings"
+        android:layout="@xml/preferences_category" />
+
+    <PreferenceCategory app:title="Account Information">
+
+        <Preference
+            app:key="update_profile_icon"
+            app:title="Update Profile Icon"
+            app:useSimpleSummaryProvider="true"
+            android:summary="Select new display icon"
+            android:targetPackage="com.example.huddleup"
+            android:targetClass="com.example.ProfileIconSelectScreen"/>
+
+        <Preference
+            app:key="update_display_name"
+            app:title="Update Display Name"
+            android:summary="Change your username"/>
+
+        <Preference
+            app:key="update_email"
+            app:title="Update Email"
+            android:summary="Change account email"/>
+
+        <Preference
+            app:key="update_password"
+            app:title="Update Password"
+            android:summary="Change account password"/>
+
+        <Preference
+            app:key="update_bio"
+            app:title="User Profile Information"
+            android:summary="Update profile information"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Privacy Options">
+
+        <SwitchPreferenceCompat
+            app:key="privacy"
+            app:title="Set Account on Private"
+            app:summaryOff="Your profile can be viewed by other app users"
+            app:summaryOn="Only authorized users can view your profile"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Account Usage">
+
+        <SwitchPreferenceCompat
+            app:key="sign_out"
+            app:title="Sign-out of Account"
+            app:summaryOff="You are currently logged-in"
+            app:summaryOn="Good-bye"/>
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

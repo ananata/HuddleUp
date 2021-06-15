@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/personalDetailsCard"
+        style="@style/centreLocatorCardDesign"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusableInTouchMode="false"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/TextViewCreateTeamInfoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start"
+                android:text="@string/team_info"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:paddingBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/general_information"
+                    android:textSize="20sp"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayoutTeamName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/EditTextTeamName"
+                    style="@style/modifiedEditText"
+                    android:hint="@string/team_name"
+                    android:singleLine="true"
+                    android:autofillHints="Los Angeles Lakers"
+                    android:inputType="text"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayoutSport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/EditTextTeamSport"
+                    style="@style/modifiedEditText"
+                    android:ems="10"
+                    android:hint="@string/sport"
+                    android:inputType="text"
+                    android:autofillHints="Basketball"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayoutTeamDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/EditTextTeamDescription"
+                    style="@style/modifiedEditText"
+                    android:hint="@string/team_description"
+                    android:textSize="18sp"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:autofillHints="National Basketball Association | Los Angeles, CA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/TextInputLayoutGetPlayers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:text="Add Players"
+                    android:textSize="20sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Players are added one at a time"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="20dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayoutForPlayersList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toStartOf="@+id/ButtonAddPlayer"
+                        android:layout_toLeftOf="@+id/ButtonAddPlayer"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="157dp"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/EditTextCreateTeamPlayerUsername"
+                                style="@style/modifiedEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="start"
+                                android:hint="@string/username"
+                                android:textAlignment="textStart"
+                                android:paddingRight="15dp"
+                                android:textSize="18sp"
+                                android:paddingEnd="15dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="162dp"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/EditTextCreateTeamPlayerRole"
+                                style="@style/modifiedEditText"
+                                android:layout_width="145dp"
+                                android:layout_height="match_parent"
+                                android:autofillHints="Basketball"
+                                android:gravity="start"
+                                android:hint="@string/role"
+                                android:inputType="text"
+                                android:textSize="18sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/ButtonAddPlayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/rounded_button"
+                        android:contentDescription="@string/add_player"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_white_addition_sign"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/ButtonSaveNewTeam"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/rounded_button"
+                android:text="@string/save_team"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.core.widget.NestedScrollView>

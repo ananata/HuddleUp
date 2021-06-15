@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MyProfileScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:id="@+id/TeamScreenView"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- copy this into every activity that should have the toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:isScrollContainer="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:id="@+id/FrameLayoutTeamScreenTop"
+                android:layout_height="200dp"
+                android:layout_above="@id/laythree"
+                android:layout_alignParentTop="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/ImageViewTeamScreenSportIcon"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:layout_gravity="bottom"
+                            android:src="@mipmap/ic_basketball"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/FrameLayoutTeamScreenTop"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:id="@id/laythree"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/TextViewTeamScreenTeamName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
+                        android:lineSpacingExtra="5sp"
+                        android:text="VCU Rams"
+                        android:textColor="#131314"
+                        android:textSize="23sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/TextViewTeamScreenTeamSport"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center_horizontal"
+                            android:text="Basketball"
+                            android:textColor="#88888f"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/TextViewTeamScreenDateCreated"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginLeft="7dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="center_horizontal"
+                            android:lineSpacingExtra="2.6sp"
+                            android:text="Created March 21, 2020"
+                            android:textColor="#88888f"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+            </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/TextViewTeamScreenDescription"
+                    app:layout_constraintTop_toBottomOf="@id/laythree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/RelativeLayoutTeamScreenEventsAndRequestToJoinButton"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:text="I like playing soccer, basketball, and baseball."
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:weightSum="3" />
+
+                <RelativeLayout
+                    android:id="@+id/RelativeLayoutTeamScreenEventsAndRequestToJoinButton"
+                    app:layout_constraintTop_toBottomOf="@id/TextViewTeamScreenDescription"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/btn_layout"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayoutTeamScreenPairOfButtons"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/ButtonTeamScreenViewTeamEvents"
+                            style="@style/modifiedEditText"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/rounded_button"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="VIEW EVENTS"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/ButtonTeamScreenRequestToJoin"
+                            style="@style/modifiedEditText"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/rounded_button"
+                            android:backgroundTint="@color/colorAccent"
+                            android:gravity="center_horizontal|center_vertical"
+                            android:text="JOIN"
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/RelativeLayoutTeamScreenEventsAndRequestToJoinButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:gravity="start"
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_above="@id/btn_layout"
+                    android:layout_marginBottom="0dp">
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TextViewTeamProfileAffiliatedPlayers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/RelativeLayoutTeamScreenEventsAndRequestToJoinButton"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="0dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Team Members"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:weightSum="3"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/btn_layout"
+                    app:layout_constraintTop_toBottomOf="@id/TextViewTeamProfileAffiliatedPlayers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30.3dp"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/RecyclerViewTeamScreen"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.0"
+                        android:layout_marginBottom="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" />
+                </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

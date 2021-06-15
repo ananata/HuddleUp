@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:id="@+id/HomeScreenView"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@mipmap/bgheader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- copy this into every activity that should have the toolbar -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:isScrollContainer="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!-- A RecyclerView with some commonly used attributes -->
+            <TextView
+                android:id="@+id/textViewHomeScreenWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start"
+                android:text="@string/welcome"
+                android:textColor="#FFF"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp" />
+
+            <TextView
+                android:id="@+id/textViewHomeScreenWelcomeSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="120dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="start"
+                android:text="@string/explore_discover_and_connect_with_teams"
+                android:textColor="#c8ffffff"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHomeScreenWelcome"
+                android:layout_marginEnd="120dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="0dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RecyclerViewHomeScreen"
+            android:paddingRight="250dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHomeScreenWelcomeSubTitle"
+            android:paddingEnd="250dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/textViewHomeScreenAccountSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/account_settings"
+            android:textColor="#374160"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/RecyclerViewHomeScreen" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHomeScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHomeScreenAccountSettings"
+                android:layout_marginRight="8dp">
+
+                <ImageView
+                    android:id="@+id/ImageViewVisitMyProfile"
+                    android:src="@mipmap/visit_profile"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="101dp"
+                    android:layout_height="101dp"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds ="true"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="@string/visit_my_profile" />
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/TextViewHomeScreenUpdateAccountSettings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/visit_my_profile"
+                        android:textColor="#374160"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/TextViewHomeScreenDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/date"
+                        android:textColor="#989898"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventbadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/greenbadge"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+                    <TextView
+                        android:id="@+id/TextViewHomeScreenClickUpdateInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/profile"
+                        android:textColor="#1ABC9C"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutParentMyProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="8dp"/>
+                <LinearLayout
+                    android:id="@+id/linearLayoutHomeScreenMyProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@id/linearLayoutHomeScreen"
+                    app:layout_constraintStart_toStartOf="parent">
+                    <ImageView
+                        android:id="@+id/ImageViewChangeAccountSettings"
+                        android:layout_width="101dp"
+                        android:layout_height="101dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/change_settings"
+                        android:contentDescription="@string/visit_my_profile" />
+                    <LinearLayout
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/TextViewHomeScreenVisitMyProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/update_account_settings"
+                            android:textColor="#374160"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/TextViewHomeScreenMyProfileDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/date"
+                            android:textColor="#989898"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/eventbadgemyprofile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="23dp"
+                        android:background="@drawable/greenbadge"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/TextViewHomeScreenClickVisitMyProfile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="ACCOUNT INFO"
+                            android:textColor="#1ABC9C"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutHomeScreenMyProfile">
+
+                <ImageView
+                    android:id="@+id/ImageViewAboutApp"
+                    android:layout_width="101dp"
+                    android:layout_height="101dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:contentDescription="@string/set_account_settings"
+                    android:src="@mipmap/profile" />
+
+                <LinearLayout
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="150dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/TextViewHomeScreenClickMyProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:fontFamily="@font/montserrat"
+                        android:text="@string/explore_app_features"
+                        android:textColor="#374160"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/date"
+                        android:textColor="#989898"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/bluebadge"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/help"
+                        android:textColor="#3A8AFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
